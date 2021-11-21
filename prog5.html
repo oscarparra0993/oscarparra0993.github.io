@@ -46,8 +46,8 @@
 	document.getElementById("citbtn").onclick=function(){
 	var request = new XMLHttpRequest();
 	request.open('GET','cit5students.json');
+	request.onload = function() { 
 	
- 
 	var data=JSON.parse(request.responseText);  
 	students=data.filter(getstudentds)
 	function getstudentds(student) {
@@ -62,10 +62,11 @@
 	document.getElementById('show').innerHTML = "There was an error, students not found";
 	}
 	}
+	}
 	document.getElementById("busbtn").onclick=function(){
 	var request = new XMLHttpRequest();
 	request.open('GET','cit5students.json');
-	
+	request.onload = function() { 
  
 	var data2=JSON.parse(request.responseText);  
 	students=data.filter(getstudentds)
@@ -81,7 +82,7 @@
 	document.getElementById('show').innerHTML = "There was an error, students not found";
 	}
 	}
- 
+	}
 		}
  </script>
  
